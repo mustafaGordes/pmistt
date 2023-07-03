@@ -5,15 +5,15 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class UserProject extends Model
+class ForumQuestion extends Model
 {
     use HasFactory;
-
-    protected $table="user_projects";
 
     protected $fillable = [
         'user_id',
         'project_id',
+        'title',
+        'question',
     ];
 
     public function user()
@@ -25,5 +25,12 @@ class UserProject extends Model
     {
         return $this->belongsTo(Project::class);
     }
+
+    public function answers()
+    {
+        return $this->hasMany(ForumAnswer::class);
+    }
+
+
 
 }
