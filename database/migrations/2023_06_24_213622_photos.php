@@ -17,8 +17,9 @@ return new class extends Migration
             $table->string('name');
             $table->text('url');
             $table->integer('order');
-            $table->softDeletes();
             $table->timestamps();
+            $table->softDeletes();
+
         });
     }
 

@@ -18,8 +18,8 @@ return new class extends Migration
             $table->string('name');
             $table->integer('order');
             $table->tinyInteger('type');
-            $table->softDeletes();
             $table->timestamps();
+            $table->softDeletes();
         });
     }
 
